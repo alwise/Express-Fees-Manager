@@ -1,0 +1,33 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Express Fees">
+    <output-path>$PROJECT_DIR$/out/artifacts/Express_Fees</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="alias" value="alwise" />
+        <option name="appClass" value="main.java.Main" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="This piece of software is to support small institution for fees payment record." />
+        <option name="enabledSigning" value="true" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/resources/images/icon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="keystore" value="" />
+        <option name="nativeBundle" value="exe" />
+        <option name="title" value="Express Fees" />
+        <option name="vendor" value="Alwise Studio Inc." />
+        <option name="version" value="0.0.1" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="module-output" name="ExpressFees" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
