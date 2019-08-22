@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane prefHeight="306.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.PaymentView">
+<AnchorPane prefHeight="306.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Register">
    <children>
-      <TableView layoutX="-1.0" layoutY="42.0" prefHeight="263.0" prefWidth="739.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="42.0">
+      <TableView fx:id="personTable" layoutX="-1.0" layoutY="42.0" prefHeight="263.0" prefWidth="739.0" stylesheets="@../style/tables-view.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="42.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID">
+          <TableColumn fx:id="cId" prefWidth="75.0" text="ID">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,7 +28,7 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-          <TableColumn prefWidth="75.0" text="Name">
+          <TableColumn fx:id="cName" prefWidth="75.0" text="Name">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +37,7 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-            <TableColumn prefWidth="75.0" text="Gender">
+            <TableColumn fx:id="cMobile" prefWidth="75.0" text="Mobile">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,7 +46,34 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-            <TableColumn prefWidth="128.0" text="Amount Due">
+            <TableColumn fx:id="cGender" prefWidth="75.0" text="Gender">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_person_outline_white_48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="cLevel" prefWidth="75.0" text="Level">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_person_outline_white_48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="cDate" prefWidth="128.0" text="Date">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_notifications_active_white_48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="cFees" prefWidth="128.0" text="Fees">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -51,7 +82,7 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-            <TableColumn prefWidth="128.0" text="Pay Fees">
+            <TableColumn fx:id="cPay" prefWidth="128.0" text="Pay Fees">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -60,7 +91,7 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-            <TableColumn prefWidth="128.0" text="Edit">
+            <TableColumn fx:id="cEdit" prefWidth="128.0" text="Edit">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -69,11 +100,11 @@
                   </ImageView>
                </graphic>
             </TableColumn>
-            <TableColumn prefWidth="128.0" text="Register Date">
+            <TableColumn fx:id="cDelete" prefWidth="128.0" text="Delete">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_notifications_active_white_48.png" />
+                        <Image url="@../images/baseline_delete_forever_white_24.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -85,9 +116,14 @@
       </TableView>
       <ToolBar layoutX="-4.0" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="745.0" style="-fx-background-color: #309BE5;" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
          <items>
+            <ChoiceBox fx:id="levelSelector" prefWidth="150.0" style="-fx-background-color: #309be5;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ChoiceBox>
             <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="214.0">
                <children>
-                  <TextField prefHeight="25.0" prefWidth="194.0" promptText="type here" />
+                  <TextField fx:id="searchView" prefHeight="25.0" prefWidth="194.0" promptText="type here" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/baseline_search_white_18.png" />
@@ -95,6 +131,22 @@
                   </ImageView>
                </children>
             </HBox>
+            <Separator orientation="VERTICAL" />
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#setDataToTable" style="-fx-background-color: #309Be6;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_refresh_white_36.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="refresh" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </items>
          <padding>
             <Insets left="10.0" />

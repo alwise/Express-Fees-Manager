@@ -1,24 +1,16 @@
 package main.java;
 
-import com.sun.scenario.effect.GaussianBlur;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.effect.Effect;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
-import main.java.models.FxmlFile;
 import main.java.models.Views;
 
-import javax.swing.text.View;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -34,10 +26,12 @@ public class Main extends Application {
         homeStage = primaryStage;
         homeStage.setMinWidth(425);
         homeStage.setMinHeight(435);
-        startRootStage(borderPane);
         homeStage.getIcons().add(Views.getIcon());
-        //center view//
-        changeCenterView(Views.paymentView.getTitle(),Views.paymentView.getView());
+        startRootStage(borderPane);
+
+
+      launchNewStage(Views.yearPeriod.getView(),Views.yearPeriod.getTitle(),false,false);
+
 
     }
 
@@ -90,7 +84,7 @@ public class Main extends Application {
      * @param resize : set whether to allow window resizing
      */
 
-    public static  void launchNewStage(String fxml,String title,boolean resize){
+    public static  void launchNewStage(String fxml,String title,boolean resize,boolean decorated){
         Parent root;
         try {
             root = FXMLLoader.load(Main.class.getResource(fxml));
@@ -110,10 +104,17 @@ public class Main extends Application {
         mStage.setScene(new Scene(root));
         mStage.initModality(Modality.WINDOW_MODAL);
         mStage.initOwner(borderPane.getScene().getWindow());
+        mStage.initStyle(decorated ? StageStyle.DECORATED : StageStyle.UNDECORATED);
         mStage.setResizable(resize);
         new Main().blurPage(mStage);
         setLocationRelativeToParent(mStage);
 
+    }
+
+    public static void closeNewStage(){
+        if (mStage != null){
+            mStage.close();
+        }
     }
 
     public static void showProgress(){

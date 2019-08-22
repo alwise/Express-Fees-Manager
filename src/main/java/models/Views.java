@@ -11,7 +11,11 @@ public enum  Views{
 
     addPerson("add_person.fxml", "Add New Person"),
 
-    paymentView("payment_view.fxml", "Make Payment"),
+    registerView("Register.fxml", "Make Payment"),
+
+    yearPeriod("year_period.fxml", "Year and period"),
+
+    makePayment("make_payment.fxml", "Make payment"),
 
     progressIndicator("progress_indicator.fxml", "Please wait..");
 

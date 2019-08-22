@@ -5,20 +5,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import main.java.models.FxmlFile;
 import main.java.models.Views;
+import main.java.util.DbActions;
 
-import javax.swing.text.View;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import static main.java.Main.*;
 
 
-public class Controller implements Initializable {
+public class Controller extends DbActions implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
     }
 
@@ -27,7 +25,7 @@ public class Controller implements Initializable {
     public void launchAddView(ActionEvent actionEvent) {
         if (actionEvent != null){
 
-            launchNewStage(Views.addPerson.getView(),Views.addPerson.getTitle(),false);
+            launchNewStage(Views.addPerson.getView(),Views.addPerson.getTitle(),false,true);
 
         }
     }
