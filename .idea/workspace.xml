@@ -6,42 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/MakePayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/UpdatePerson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/ActionButtonTableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DbActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DbCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DbProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DbUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/style/tables-view.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/make_payment.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/year_period.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kemev.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kemev.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Updated fees">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/java/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/AddStudent.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/controllers/PaymentView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/models/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/java/models/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/models/FxmlFile.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/java/models/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/java/models/Views.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/resources/views/add_person.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/resources/views/add_person.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/resources/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExpressFees/main/resources/views/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExpressFees/main/resources/views/payment_view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/YearPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PaymentView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/FxmlFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/add_person.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/add_person.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/payment_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/Register.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,11 +101,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/DbUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+            <state relative-caret-position="2117">
+              <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1056">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -216,6 +201,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="alwise &lt;kemevoralwise@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -487,6 +477,14 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated fees">
+      <created>1566444222742</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566444222743</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -505,7 +503,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17324094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17324094" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -515,7 +513,7 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281412" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30529594" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30529594" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -548,6 +546,8 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Updated fees" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated fees" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -671,20 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,8 +834,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/DbUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+        <state relative-caret-position="2117">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
