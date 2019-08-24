@@ -1,27 +1,41 @@
 package main.java.models;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
+
 public enum  Views{
+
 
 
     //TODO add fxml file name and title
 
     mainView("main.fxml", "Express Fees Manager"),
 
-    addPerson("add_person.fxml", "Add New Person"),
+    addPerson("add_person.fxml","Update Person"),
 
-    registerView("Register.fxml", "Make Payment"),
+    registerView("Register.fxml", "Register"),
 
     yearPeriod("year_period.fxml", "Year and period"),
 
-    makePayment("make_payment.fxml", "Make payment"),
+    makePayment("make_payment.fxml", "Payment"),
+
+    personFees("view_person_fees.fxml", "Person Fees"),
+
+    feesItem("fees_item.fxml", "fees item"),
+
+    sortFees("sort_fees.fxml", "Sort Fees"),
+
+    config("config_view.fxml", "Preferences"),
 
     progressIndicator("progress_indicator.fxml", "Please wait..");
 
 
     private String view;
     private String title;
+    private String BASE_DIR = "/main/resources/views/";
 
     Views(String view, String title) {
         this.view = view;
@@ -29,8 +43,18 @@ public enum  Views{
     }
 
    public String getView(){
-       String BASE_DIR = "/main/resources/views/";
+
        return BASE_DIR.concat(view);
+    }
+
+    public Parent getParent(){
+        try {
+            return FXMLLoader.load(this.getClass().getResource(BASE_DIR.concat(view)));
+        } catch (IOException e) {
+            System.out.println("could not load file");
+            e.printStackTrace();
+            return null;
+        }
     }
 
 

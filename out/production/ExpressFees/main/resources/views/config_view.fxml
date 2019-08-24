@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="410.0" prefWidth="820.0" stylesheets="@../style/controls.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Configs">
+   <children>
+      <TabPane layoutX="-2.0" layoutY="-1.0" prefHeight="326.0" prefWidth="743.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-1.0">
+        <tabs>
+          <Tab closable="false" text="Periods &amp; Levels">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <ListView fx:id="periodList" layoutX="348.0" layoutY="37.0" prefHeight="248.0" prefWidth="189.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="37.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem disable="true" mnemonicParsing="false" text="Copy">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator></MenuItem>
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Edit">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator></MenuItem>
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Paste">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator></MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#deletePeriod" text="Delete">
+                                      </MenuItem>
+                                </items>
+                              </ContextMenu>
+                           </contextMenu></ListView>
+                        <TextField fx:id="name" layoutX="33.0" layoutY="106.0" prefHeight="30.0" prefWidth="143.0" promptText="Ex: Term One">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <ListView fx:id="levelList" layoutX="537.0" layoutY="37.0" prefHeight="248.0" prefWidth="192.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="12.0" AnchorPane.topAnchor="37.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Copy">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Edit">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem disable="true" mnemonicParsing="false" text="Paste">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator>
+                                    </MenuItem>
+                                    <MenuItem mnemonicParsing="false" onAction="#deleteLevel" text="Delete">
+
+                                    </MenuItem>
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </ListView>
+                        <Label layoutX="364.0" layoutY="8.0" text="Periods">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="660.0" layoutY="8.0" text="Levels">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="357.0" layoutY="30.0" prefHeight="1.0" prefWidth="358.0" />
+                        <MenuButton layoutX="176.0" layoutY="105.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" style="-fx-background-radius: 15; -fx-background-color: transparent;" text="SUBMIT">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#submitPeriod" text="Period">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                            <MenuItem mnemonicParsing="false" onAction="#submitLevel" text="Level">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                          </items>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </MenuButton>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_edit_white_18.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab closable="false" text="Fees">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="amount" alignment="CENTER" layoutX="70.0" layoutY="139.0" onKeyTyped="#validateAmount" prefHeight="43.0" prefWidth="100.0" promptText="500" styleClass="text-field">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="34.0" layoutY="218.0" mnemonicParsing="false" onAction="#submitFees" prefHeight="43.0" prefWidth="147.0" text="SUBMIT" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <ChoiceBox fx:id="period" layoutX="70.0" layoutY="53.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+                        <ChoiceBox fx:id="level" layoutX="70.0" layoutY="90.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+                        <ChoiceBox fx:id="year" layoutX="70.0" layoutY="18.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+                        <Label layoutX="23.0" layoutY="90.0" text="Level">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="31.0" layoutY="139.0" text="Ghs">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="53.0" text="Period">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableView" layoutX="231.0" layoutY="39.0" prefHeight="250.0" prefWidth="504.0" style="-fx-background-color: white;" stylesheets="@../style/tables-view.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="39.0">
+                          <columns>
+                            <TableColumn fx:id="cPY" prefWidth="75.0" text="Period &amp; Year">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_notifications_active_white_48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></TableColumn>
+                              <TableColumn fx:id="cLevel" prefWidth="75.0" text="Level">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_school_white_48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></TableColumn>
+                              <TableColumn fx:id="cAmount" prefWidth="75.0" text="Amount">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_attach_money_white_36.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></TableColumn>
+                              <TableColumn fx:id="cDate" prefWidth="75.0" text="Date">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_notifications_active_white_48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </TableColumn>
+                              <TableColumn fx:id="cDelete" prefWidth="75.0" text="Delete">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_delete_forever_white_36.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </TableColumn>
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label layoutX="28.0" layoutY="18.0" text="Year">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="14.0" layoutY="284.0" prefHeight="3.0" prefWidth="219.0" />
+                        <Separator layoutX="10.0" layoutY="199.0" prefHeight="1.0" prefWidth="214.0" />
+                        <Separator layoutX="204.0" layoutY="12.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="5.0" />
+                        <Button layoutX="233.0" layoutY="6.0" mnemonicParsing="false" onAction="#viewTableData" text="View Data" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_attach_money_white_18.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

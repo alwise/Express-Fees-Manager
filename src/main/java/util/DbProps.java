@@ -9,7 +9,11 @@ public enum DbProps {
 
     personTable("person"),
 
-    feesTable("fees"),
+    feesTable1("feesDetails"),
+
+    feesTable2("fees"),
+
+    feesCharged("feesCharged"),
 
     insert("insert into"),
 
@@ -27,15 +31,27 @@ public enum DbProps {
 
     level("level"),
 
+    period("period"),
+
     photo("photo"),
 
     date("date"),
 
-    amount_paid("amount_paid"),
+    delete("deleted"),
+
+    amount("amount"),
+
+    yearPeriod("yearPeriod"),
+
+    yr("yr"),
 
     amount_due("amount_due"),
 
-     YEAR_PERIOD(PERIOD.concat(YEAR));
+    success("successful "),
+
+    noPeriodSelected("Please selected a period in which you want to work from BOTTOM > RIGHT > CORNER > Periods." +
+            "\n\nNB: if it's empty then add them from preferences below.");
+
 
 
 

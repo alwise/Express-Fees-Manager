@@ -1,0 +1,22 @@
+
+
+#searchView {
+    -fx-background-color:white;
+    -fx-background-radius: 15;
+    -fx-border-image-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-font-size: 12px;
+    -fx-prompt-text-fill: grey;
+}
+#searchView:focused {
+    -fx-prompt-text-fill:rgb(128,128,128);
+    /*-fx-background-color: */
+    /*-fx-background-radius: 15;*/
+    -fx-border-color:transparent;
+
+    /*-fx-padding: 5px;*/
+}
+
+
+
+

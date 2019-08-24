@@ -1,15 +1,20 @@
 package main.java;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.java.models.Views;
+import main.java.util.DbActions;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -24,13 +29,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         borderPane = FXMLLoader.load(getClass().getResource(Views.mainView.getView()));
         homeStage = primaryStage;
-        homeStage.setMinWidth(425);
-        homeStage.setMinHeight(435);
+//        homeStage.setMinWidth(800);
+//        homeStage.setMinHeight(500);
         homeStage.getIcons().add(Views.getIcon());
         startRootStage(borderPane);
 
 
-      launchNewStage(Views.yearPeriod.getView(),Views.yearPeriod.getTitle(),false,false);
 
 
     }
@@ -90,7 +94,7 @@ public class Main extends Application {
             root = FXMLLoader.load(Main.class.getResource(fxml));
 
         } catch (IOException e) {
-            System.out.println("System error cannot locate file..");
+            System.out.println("System error cannot locate file.."+e.getLocalizedMessage());
             return;
         }
 
@@ -117,7 +121,7 @@ public class Main extends Application {
         }
     }
 
-    public static void showProgress(){
+    public static void showProgress(Stage parent){
 
         Parent root;
         try {
@@ -136,11 +140,30 @@ public class Main extends Application {
         mStageProgress.getIcons().add(Views.getIcon());
         mStageProgress.setScene(new Scene(root));
         mStageProgress.initModality(Modality.WINDOW_MODAL);
-        mStageProgress.initOwner(borderPane.getScene().getWindow());
+        mStageProgress.initOwner(parent.getScene().getWindow());
         mStageProgress.initStyle(StageStyle.UNDECORATED);
         mStageProgress.setResizable(false);
         setLocationRelativeToParent(mStageProgress);
 
+    }
+
+    //TODO dismiss or close the progress indicator
+    public static void progressDismiss(){
+        mStageProgress.close();
+    }
+
+
+    public static Boolean showOptionDialog(Stage parent,String content){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,content, ButtonType.YES,ButtonType.NO);
+        alert.initOwner(parent.getScene().getWindow());
+        alert.showAndWait();
+        return alert.getResult() == (ButtonType.YES);
+    }
+
+    public static void showInfoDialog(Stage parent,String content){
+       Alert alert =  new Alert(Alert.AlertType.INFORMATION,content);
+       alert.initOwner(parent.getScene().getWindow());
+       alert.showAndWait();
     }
 
 
@@ -177,7 +200,13 @@ public class Main extends Application {
     }
 
 
+
+
+
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
 }

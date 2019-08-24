@@ -5,16 +5,17 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Person {
-    private StringProperty id, name,mobile,gender,level, date;
+    private StringProperty id, name,mobile,gender,period,level, date;
 
     private SimpleObjectProperty<Byte> photo;
 
 
-    public Person(String id, String name, String mobile, String gender, String level, Byte photo, String date) {
+    public Person(String id, String name, String mobile, String gender,String period, String level, Byte photo, String date) {
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
         this.mobile = new SimpleStringProperty(mobile);
         this.gender = new SimpleStringProperty(gender);
+        this.period = new SimpleStringProperty(level);
         this.level = new SimpleStringProperty(level);
         this.photo = new SimpleObjectProperty<>(photo);
         this.date = new SimpleStringProperty(date);
@@ -68,6 +69,18 @@ public class Person {
 
     public void setGender(String gender) {
         this.gender.set(gender);
+    }
+
+    public String getPeriod() {
+        return period.get();
+    }
+
+    public StringProperty periodProperty() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period.set(period);
     }
 
     public String getLevel() {

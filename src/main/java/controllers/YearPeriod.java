@@ -39,17 +39,27 @@ public class YearPeriod extends DbActions implements Initializable {
 
     @FXML
     private void continueToStart(){
-        Constants.YEAR = year.getValue();
-        Constants.PERIOD = period.getValue().replace(" ","");
-        System.out.println("new table : "+ DbProps.YEAR_PERIOD.getProp());
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+        try{
+            if (null == year.getValue())
+                return;
 
-                createDbTables();
-                Main.changeCenterView(Views.registerView.getTitle(),Views.registerView.getView());
-                Main.closeNewStage();
-            }
+            if (null == period.getValue())
+                return;
+
+            //Constants.YEAR = year.getValue();
+
+            Constants.PERIOD = period.getValue().replace(" ","");
+
+        }catch (Exception e){
+            System.out.println("Empty values selected for year and period");
+            return;
+        }
+
+        System.out.println("new table : "+ DbProps.feesTable1.getProp());
+        Platform.runLater(() -> {
+            createDbTables();
+            Main.changeCenterView(Views.registerView.getTitle(),Views.registerView.getView());
+            Main.closeNewStage();
         });
 
     }

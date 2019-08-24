@@ -1,0 +1,28 @@
+.button{
+    -fx-background-color:#309BE5;
+    -fx-text-fill:#fff;
+}
+.button:focused{
+    -fx-background-color:#309BE5;
+    -fx-text-fill:#fff;
+}
+.button:selected{
+    -fx-background-color:grey;
+    -fx-text-fill:#fff;
+}
+.button:hover{
+    -fx-background-color:grey;
+    -fx-text-fill:#fff;
+}
+.button:disabled{
+    -fx-opacity: 9.0;
+    -fx-background-color:#309BE5;
+    -fx-text-fill:#fff;
+}
+
+.text-field:focused{
+    -fx-prompt-text-fill: #8D6E63;
+}
+.text-area:focused{
+    -fx-prompt-text-fill: #8D6E63;
+}

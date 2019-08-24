@@ -12,21 +12,32 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.UpdatePerson">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="362.0" stylesheets="@../style/controls.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.UpdatePerson">
    <children>
-      <TextField fx:id="name" layoutX="49.0" layoutY="35.0" prefHeight="30.0" prefWidth="256.0" promptText="Firstname Lastname">
+      <TextField fx:id="name" layoutX="49.0" layoutY="35.0" prefHeight="30.0" prefWidth="256.0" promptText="Firstname Lastname" styleClass="text-field">
          <tooltip>
             <Tooltip text="person's full name" />
          </tooltip>
+         <font>
+            <Font size="14.0" />
+         </font>
       </TextField>
-      <TextField fx:id="mobile" layoutX="48.0" layoutY="84.0" prefHeight="30.0" prefWidth="256.0" promptText="02XXXXXXX">
+      <TextField fx:id="mobile" layoutX="48.0" layoutY="84.0" onKeyTyped="#validateMobile" prefHeight="30.0" prefWidth="256.0" promptText="02XXXXXXX" styleClass="text-field">
          <tooltip>
             <Tooltip text="mobile number" />
          </tooltip>
+         <font>
+            <Font size="14.0" />
+         </font>
       </TextField>
-      <ComboBox fx:id="level" layoutX="54.0" layoutY="130.0" prefHeight="25.0" prefWidth="250.0" promptText="Level" />
-      <RadioButton fx:id="female" layoutX="99.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#disableMale" selected="true" text="Female">
+      <ComboBox fx:id="level" layoutX="49.0" layoutY="130.0" prefHeight="25.0" prefWidth="122.0" promptText="Admited Level" style="-fx-background-color: transparent;" styleClass="button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <RadioButton fx:id="female" layoutX="99.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#disableMale" text="Female">
          <tooltip>
             <Tooltip text="female" />
          </tooltip>
@@ -43,7 +54,7 @@
                   <Image url="@../images/baseline_person_white_48.png" />
                </image>
             </ImageView>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#uploadPhoto" style="-fx-background-color: #309BE5;" text="Upload" textFill="WHITE">
+            <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#uploadPhoto" style="-fx-background-color: #309BE5;" text="Upload" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" smooth="false">
                      <image>
@@ -63,12 +74,63 @@
             </Button>
          </children>
       </VBox>
-      <Button layoutX="113.0" layoutY="422.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: green;" text="SUBMIT" textFill="WHITE">
+      <Button layoutX="113.0" layoutY="422.0" mnemonicParsing="false" onAction="#submitForm" prefHeight="38.0" prefWidth="130.0" text="SUBMIT" textFill="WHITE">
          <tooltip>
             <Tooltip text="save data" />
          </tooltip>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
       <Separator layoutX="79.0" layoutY="211.0" prefWidth="200.0" />
       <Separator layoutX="78.0" layoutY="406.0" prefWidth="200.0" />
+      <Text fx:id="status" layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="period" layoutX="172.0" layoutY="130.0" prefHeight="25.0" prefWidth="130.0" promptText="Admited Period" style="-fx-background-color: transparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Text fill="#ff0404" layoutX="48.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0404" layoutX="302.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0404" layoutX="36.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0404" layoutX="37.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0404" layoutX="79.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NB: ">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fields with red stars are required">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

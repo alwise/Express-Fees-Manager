@@ -9,16 +9,16 @@ import java.sql.*;
 import java.util.List;
 import java.util.Properties;
 
-public class DbUtils {
+class DbUtils {
 
-    public static Connection conn;
+    static Connection conn;
     private static ResultSet rs;
-    public static Statement statement;
+    private static Statement statement;
     private static PreparedStatement pst;
     private static CachedRowSet crs;
 
     //TODO: open connection to db
-    public static  void dbConnect(){
+    static  void dbConnect(){
         try{
            conn =  DriverManager.getConnection(DbProps.connection_str.getProp());
             if (conn != null){
@@ -34,7 +34,7 @@ public class DbUtils {
 
 
     //TODO : close and exit database
-    public static void dbDisconnect(){
+    static void dbDisconnect(){
             try {
                 if (rs != null) {
                     rs.close();
@@ -62,7 +62,7 @@ public class DbUtils {
      * @param query SQL statement to execute
      * @return : resultSet..
      */
-    public static ResultSet executeQuery(String query, List<?> values){
+    static ResultSet executeQuery(String query, List<?> values){
         dbConnect();
         try {
             pst = conn.prepareStatement(query);
@@ -93,7 +93,7 @@ public class DbUtils {
      *
      * @param query : sql statement to run
      */
-    public static void executeUpdate(String query, List<?> values){
+    static void executeUpdate(String query, List<?> values){
         dbConnect();
         try {
             pst = conn.prepareStatement(query);
@@ -108,7 +108,7 @@ public class DbUtils {
             pst.execute();
             System.out.println("updated data successfully");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("unable to execute due to :"+e.getLocalizedMessage());
         }finally {
             dbDisconnect();
         }
