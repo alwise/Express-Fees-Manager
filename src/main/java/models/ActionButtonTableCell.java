@@ -24,16 +24,16 @@ public class ActionButtonTableCell<S> extends TableCell<S, Button> {
     public ActionButtonTableCell(String label, Function< S, S> function) {
         this.actionButton = new Button(label);
         if (label.equalsIgnoreCase("Edit")) {
-            this.actionButton.setStyle("-fx-background-color:green;-fx-text-fill:white;");
+            this.actionButton.setStyle("-fx-background-color:green;-fx-text-fill:white;-fx-background-radius:2;");
         }
         if (label.equalsIgnoreCase("Delete")) {
-            this.actionButton.setStyle("-fx-background-color:red;-fx-text-fill:white;");
+            this.actionButton.setStyle("-fx-background-color:red;-fx-text-fill:white;-fx-background-radius:2;");
         }
         if (label.equals("Pay")) {
-            this.actionButton.setStyle("-fx-background-color:#309BE5;-fx-text-fill:white;");
+            this.actionButton.setStyle("-fx-background-color:#309BE5;-fx-text-fill:white;-fx-background-radius:2;");
         }
         if (label.equalsIgnoreCase("View")) {
-            this.actionButton.setStyle("-fx-background-color:#309BE5;-fx-text-fill:white;");
+            this.actionButton.setStyle("-fx-background-color:#309BE5;-fx-text-fill:white;-fx-background-radius:2;");
         }
         this.actionButton.setCursor(Cursor.HAND);
 

@@ -42,6 +42,15 @@
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#exportExcel" text="Export Excel">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/export_excel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
               </items>
             </ContextMenu>
          </contextMenu>

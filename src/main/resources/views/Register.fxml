@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="306.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Register">
+<AnchorPane prefHeight="306.0" prefWidth="969.0" stylesheets="@../style/controls.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Register">
    <children>
       <TableView fx:id="personTable" layoutX="-1.0" layoutY="42.0" prefHeight="263.0" prefWidth="739.0" stylesheets="@../style/tables-view.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="42.0">
         <columns>
@@ -31,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_portrait_white_24.png" />
+                        <Image url="@../images/baseline_person_white_24.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -40,7 +40,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_person_outline_white_48.png" />
+                        <Image url="@../images/round_local_phone_white_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,7 +49,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_person_outline_white_48.png" />
+                        <Image url="@../images/baseline_portrait_white_48.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -58,7 +58,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_person_outline_white_48.png" />
+                        <Image url="@../images/baseline_school_white_36.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -76,7 +76,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_attach_money_white_24.png" />
+                        <Image url="@../images/round_local_atm_white_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -117,8 +117,8 @@
          <items>
             <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="214.0" stylesheets="@../style/search.css">
                <children>
-                  <TextField fx:id="searchView" onKeyPressed="#searchPerson" prefHeight="25.0" prefWidth="194.0" promptText="type name or  id" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <TextField fx:id="searchView" onKeyPressed="#searchPerson" prefHeight="25.0" prefWidth="194.0" promptText="type name or  id here.." />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/baseline_search_white_18.png" />
                      </image>
@@ -126,9 +126,9 @@
                </children>
             </HBox>
             <Separator orientation="VERTICAL" />
-            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#setDataToTable" style="-fx-background-color: #309Be6;" text="Button">
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#setDataToTable" text="Button">
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/baseline_refresh_white_36.png" />
                      </image>

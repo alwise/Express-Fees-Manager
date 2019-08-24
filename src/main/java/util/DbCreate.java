@@ -12,6 +12,25 @@ public interface DbCreate {
      void createDbTables();
 
      /**
+      *
+      * @param params parameters for creating password
+      */
+     boolean createPassword(List<?> params);
+
+     /**
+      *
+      * @param params parameters for login
+      * @return true if user available otherwise false;
+      */
+     boolean logIn(List<?> params);
+
+     /*
+          return true if users exist
+      */
+     boolean getAllUsers();
+
+
+     /**
       * add new person to db
       * @param param list of values to set to placeholders in query
       */

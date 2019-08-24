@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Express Fees.jnlp">
+  <information>
+    <title>Express Fees</title>
+    <vendor>Alwise Studio Inc.</vendor>
+    <description>This piece of software is to support small institution for fees payment record.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Express Fees.jar" size="151614" download="eager" />
+    <jar href="commons-codec-1.12.jar" size="339669" download="eager" />
+    <jar href="commons-collections4-4.3.jar" size="753996" download="eager" />
+    <jar href="commons-math3-3.6.1.jar" size="2213560" download="eager" />
+    <jar href="poi-4.1.0.jar" size="2754042" download="eager" />
+    <jar href="sqlite-jdbc-3.21.0.1.jar" size="6674432" download="eager" />
+  </resources>
+<security>
+  <all-permissions/>
+</security>
+  <jfx:javafx-desc  width="600" height="400" main-class="main.java.Main"  name="Express Fees" />
+  <update check="background"/>
+</jnlp>

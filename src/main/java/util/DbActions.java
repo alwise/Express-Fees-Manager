@@ -16,6 +16,14 @@ public abstract class DbActions extends DbUtils implements DbCreate {
     @Override
     public void createDbTables() {
 
+        String user = "create table if not exists " +
+                "user" +
+                "(" +
+                "password text," +
+                "date datetime," +
+                "primary key(password)" +
+                ")";
+
 
         String personTable = "create table if not exists " +
                 "person" +
@@ -84,7 +92,7 @@ public abstract class DbActions extends DbUtils implements DbCreate {
                 ")";
 
 
-        String[] tables = {personTable,feesTable1,feesTable2,levelsTable,periodTable,feesChargeTable};
+        String[] tables = {user,personTable,feesTable1,feesTable2,levelsTable,periodTable,feesChargeTable};
 
         dbConnect();
         try {
@@ -102,6 +110,48 @@ public abstract class DbActions extends DbUtils implements DbCreate {
         }
 
 
+    }
+
+    @Override
+    public boolean createPassword(List<?> params) {
+        String query = "insert into user(password,date) values(?,?)";
+        executeUpdate(query,params);
+        return true;
+    }
+
+    @Override
+    public boolean logIn(List<?> params) {
+        boolean avail = false;
+        String query = "select count(password) as pass from user where password = ?";
+        ResultSet rs = executeQuery(query,params);
+        try{
+            if (rs.next()){
+                System.out.println(rs.getInt("pass"));
+                avail = rs.getInt("pass") > 0;
+            }
+        }catch (Exception e){
+            System.out.println("cannot get password due to: "+e.getLocalizedMessage());
+            return false;
+        }
+        return avail;
+    }
+
+    @Override
+    public boolean getAllUsers() {
+        boolean avail = false;
+        String query = "select count(password) as pass from user";
+        ResultSet rs = executeQuery(query,null);
+        try{
+            if (rs.first()){
+                avail =  rs.getInt("pass") > 0;
+                System.out.println("counted is "+avail);
+            }
+        }catch (Exception e){
+            System.out.println("cannot get password due to: "+e.getLocalizedMessage());
+            return false;
+        }
+
+        return avail;
     }
 
     @Override

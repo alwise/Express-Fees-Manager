@@ -137,13 +137,10 @@
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="34.0" layoutY="218.0" mnemonicParsing="false" onAction="#submitFees" prefHeight="43.0" prefWidth="147.0" text="SUBMIT" textFill="WHITE">
+                        <Button layoutX="34.0" layoutY="218.0" mnemonicParsing="false" onAction="#submitFees" text="SUBMIT" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
                         </Button>
                         <ChoiceBox fx:id="period" layoutX="70.0" layoutY="53.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
                         <ChoiceBox fx:id="level" layoutX="70.0" layoutY="90.0" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent;" />

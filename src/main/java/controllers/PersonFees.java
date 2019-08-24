@@ -19,13 +19,14 @@ import main.java.models.Views;
 import main.java.util.DbActions;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class PersonFees extends DbActions implements Initializable {
     @FXML
-    Text name,mobile,gender;
+    Text id,name,mobile,gender;
     @FXML
     ImageView photo;
     @FXML
@@ -34,6 +35,7 @@ public class PersonFees extends DbActions implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        id.setText(new DecimalFormat("0000000000").format(Integer.parseInt(Constants.ID)));
         name.setText(Constants.NAME);
         mobile.setText(Constants.MOBILE);
         gender.setText(Constants.GENDER);

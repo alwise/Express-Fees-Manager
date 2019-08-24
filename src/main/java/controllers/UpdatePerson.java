@@ -18,6 +18,7 @@ import main.java.util.DbActions;
 import main.java.util.DbProps;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.*;
 
 import static main.java.Main.mStage;
@@ -147,7 +148,7 @@ public class UpdatePerson extends DbActions implements Initializable {
                 period.getValue(),
                 level.getValue(),
                 null,
-                String.valueOf(new Date().getTime())
+                String.valueOf(LocalDateTime.now())
         ));
         return person;
     }

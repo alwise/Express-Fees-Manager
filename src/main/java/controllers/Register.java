@@ -42,7 +42,6 @@ public class Register extends DbActions implements Initializable {
     TextField searchView;
 
     private FilteredList<Person> filteredList;
-    private SortedList<Person> sortedList ;
 
 
     @Override
@@ -154,7 +153,7 @@ public class Register extends DbActions implements Initializable {
 
         });
 
-        sortedList = new SortedList<>(filteredList);
+        SortedList<Person> sortedList = new SortedList<>(filteredList);
         sortedList.comparatorProperty().bind(personTable.comparatorProperty());
         personTable.setItems(sortedList);
 

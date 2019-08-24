@@ -7,6 +7,8 @@ public enum DbProps {
 
     connection_str("jdbc:sqlite:dox.dll"),
 
+    userTable("user"),
+
     personTable("person"),
 
     feesTable1("feesDetails"),
@@ -16,6 +18,8 @@ public enum DbProps {
     feesCharged("feesCharged"),
 
     insert("insert into"),
+
+    password("password"),
 
     id("id"),
 

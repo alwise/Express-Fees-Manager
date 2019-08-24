@@ -13,7 +13,10 @@
 .button:hover{
     -fx-background-color:grey;
     -fx-text-fill:#fff;
+    -fx-font-size:14;
+    -fx-font-weight:bold
 }
+
 .button:disabled{
     -fx-opacity: 9.0;
     -fx-background-color:#309BE5;
