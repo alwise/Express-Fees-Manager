@@ -1,2 +1,2 @@
 # ExpressFees
- Javafx project to manages fees payment in small institutions
+This project is intend to help small organizations to manage contributions from members.
