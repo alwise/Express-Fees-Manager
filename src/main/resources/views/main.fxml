@@ -91,6 +91,24 @@
                   <Font name="Calibri Light" size="12.0" />
                </font>
             </Button>
+            <Button alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="2.0" layoutX="317.0" layoutY="23.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#aboutUs" prefWidth="80.0" text="Info" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="preferences" />
+               </tooltip>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/baseline_info_white_36.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+            </Button>
             <Region HBox.hgrow="ALWAYS" />
             <HBox fx:id="loginParent" alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="277.0" spacing="5.0" visible="false">
                <children>

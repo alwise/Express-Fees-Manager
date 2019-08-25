@@ -1,5 +1,6 @@
 package main.java.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.text.Text;
+import main.java.Main;
 import main.java.models.Constants;
 import main.java.models.Person;
 import main.java.models.PersonFeesModel;
@@ -29,18 +31,19 @@ public class FeesItem extends DbActions implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+     Platform.runLater(() -> {
+         PersonFeesModel fee =  PersonFees.getPerson();
 
-       PersonFeesModel fee =  PersonFees.getPerson();
-
-       if(fee != null){
-          rootPane.setDisable(fee.isDelete());
-          year.setText(fee.getYr());
-          period.setText(fee.getPeriod());
-          level.setText(fee.getLevel());
-          amount.setText(fee.getAmount());
-          date.setText(fee.getDate());
-          deleteBtn.setDisable(fee.isDelete());
-       }
+         if(fee != null){
+             rootPane.setDisable(fee.isDelete());
+             year.setText(fee.getYr());
+             period.setText(fee.getPeriod());
+             level.setText(fee.getLevel());
+             amount.setText(fee.getAmount());
+             date.setText(fee.getDate());
+             deleteBtn.setDisable(fee.isDelete());
+         }
+     });
 
     }
 
@@ -53,10 +56,16 @@ public class FeesItem extends DbActions implements Initializable {
         params.add(true);
         params.add(Constants.ID);
         params.add(date.getText().trim());
-        deletePayment(params);
+        if (!Main.showOptionDialog(Main.homeStage,"Confirm delete?"))
+            return;
 
-        //disable deleted..
-        rootPane.setDisable(true);
+        Platform.runLater(() -> {
+            deletePayment(params);
+
+            //disable deleted..
+            rootPane.setDisable(true);
+        });
+
     }
 
 

@@ -14,6 +14,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
@@ -22,7 +23,7 @@
 
 <AnchorPane prefHeight="410.0" prefWidth="820.0" stylesheets="@../style/controls.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Configs">
    <children>
-      <TabPane layoutX="-2.0" layoutY="-1.0" prefHeight="326.0" prefWidth="743.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-1.0">
+      <TabPane fx:id="tab" layoutX="-2.0" layoutY="-1.0" prefHeight="326.0" prefWidth="743.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="-1.0">
         <tabs>
           <Tab closable="false" text="Periods &amp; Levels">
             <content>
@@ -121,14 +122,14 @@
                   </AnchorPane>
             </content>
                <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_edit_white_18.png" />
+                        <Image url="@../images/baseline_flag_black_18.png" />
                      </image>
                   </ImageView>
                </graphic>
           </Tab>
-            <Tab closable="false" text="Fees">
+            <Tab closable="false" onSelectionChanged="#setComboData" text="Fees">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
@@ -137,7 +138,7 @@
                               <Font size="14.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="34.0" layoutY="218.0" mnemonicParsing="false" onAction="#submitFees" text="SUBMIT" textFill="WHITE">
+                        <Button layoutX="69.0" layoutY="225.0" mnemonicParsing="false" onAction="#submitFees" text="SUBMIT" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -150,9 +151,9 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="31.0" layoutY="139.0" text="Ghs">
+                        <Label layoutX="48.0" layoutY="133.0" text="\$">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font size="18.0" />
                            </font>
                         </Label>
                         <Label layoutX="14.0" layoutY="53.0" text="Period">
@@ -226,10 +227,13 @@
                   </AnchorPane>
                </content>
                <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/baseline_attach_money_white_18.png" />
+                        <Image url="@../images/round_local_atm_white_18dp.png" />
                      </image>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" spread="0.71" />
+                     </effect>
                   </ImageView>
                </graphic>
             </Tab>

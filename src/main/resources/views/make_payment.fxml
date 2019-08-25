@@ -16,12 +16,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="payeeAmount" alignment="CENTER" layoutX="71.0" layoutY="151.0" onKeyTyped="#validateAmount" prefHeight="41.0" prefWidth="149.0" promptText="100" styleClass="text-field">
+      <TextField fx:id="payeeAmount" alignment="CENTER" layoutX="71.0" layoutY="163.0" onKeyTyped="#validateAmount" prefHeight="41.0" prefWidth="149.0" promptText="100" styleClass="text-field">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <ChoiceBox fx:id="payeeLevel" layoutX="70.0" layoutY="109.0" prefWidth="150.0" style="-fx-background-color: #309BE5;" />
+      <ChoiceBox fx:id="payeeLevel" layoutX="70.0" layoutY="123.0" prefWidth="150.0" style="-fx-background-color: #309BE5;" />
       <Separator layoutX="45.0" layoutY="66.0" prefWidth="200.0" />
       <Separator layoutX="45.0" layoutY="216.0" prefWidth="200.0" />
       <Button layoutX="161.0" layoutY="244.0" mnemonicParsing="false" onAction="#submitPay" prefHeight="25.0" prefWidth="83.0" text="OK" textFill="WHITE">
@@ -29,6 +29,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ChoiceBox fx:id="payeePeriod" layoutX="70.0" layoutY="71.0" prefWidth="150.0" style="-fx-background-color: #309BE5;" />
+      <ChoiceBox fx:id="payeePeriod" layoutX="70.0" layoutY="81.0" prefWidth="150.0" style="-fx-background-color: #309BE5;" />
    </children>
 </AnchorPane>

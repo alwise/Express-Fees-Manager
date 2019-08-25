@@ -12,6 +12,8 @@ public enum  Views{
 
     //TODO add fxml file name and title
 
+    about("about.fxml", "About us"),
+
     mainView("main.fxml", "Express Fees Manager"),
 
     addPerson("add_person.fxml","Update Person"),

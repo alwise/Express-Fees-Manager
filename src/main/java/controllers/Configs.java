@@ -2,8 +2,10 @@ package main.java.controllers;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -37,14 +39,10 @@ public class Configs extends DbActions implements Initializable {
     TableColumn<SortedFessModel,Button>cDelete;
     @FXML
     TableView<SortedFessModel> tableView;
+    @FXML private TabPane tab;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Platform.runLater(() -> {
-            year.setItems(Constants.yearList());
-            year.setValue(String.valueOf(LocalDateTime.now().getYear()));
-            period.setItems(getPeriods());
-            level.setItems(getLevels());
-        });
+
 
         Platform.runLater(this::refreshPeriodList);
 
@@ -200,6 +198,20 @@ public class Configs extends DbActions implements Initializable {
 
         if (!keyEvent.getCharacter().matches("[0-9.]")){
             keyEvent.consume();
+        }
+    }
+
+    @FXML
+    public void setComboData(Event event) {
+        if (event == null)
+            return;
+
+        if (tab.getSelectionModel().isSelected(1)){
+                year.setItems(Constants.yearList());
+                year.setValue(String.valueOf(LocalDateTime.now().getYear()));
+                period.setItems(getPeriods());
+                level.setItems(getLevels());
+
         }
     }
 }

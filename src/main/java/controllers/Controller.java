@@ -1,6 +1,7 @@
 package main.java.controllers;
 
 import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
@@ -70,7 +71,7 @@ public class Controller extends DbActions implements Initializable {
             return;
 
         Constants.IS_UPDATE = false;
-        launchNewStage(Views.addPerson.getView(),Views.addPerson.getTitle(),false,true);
+       Platform.runLater(() -> launchNewStage(Views.addPerson.getView(),Views.addPerson.getTitle(),false,true));
     }
 
     @FXML
@@ -81,7 +82,7 @@ public class Controller extends DbActions implements Initializable {
         if (!isLoginAlready)
             return;
 
-        Main.changeCenterView(Views.registerView.getTitle(),Views.registerView.getView());
+        Platform.runLater(() -> Main.changeCenterView(Views.registerView.getTitle(),Views.registerView.getView()));
     }
 
     @FXML
@@ -92,7 +93,7 @@ public class Controller extends DbActions implements Initializable {
         if (!isLoginAlready)
             return;
 
-        Main.changeCenterView(Views.sortFees.getTitle(),Views.sortFees.getView());
+       Platform.runLater(() -> Main.changeCenterView(Views.sortFees.getTitle(),Views.sortFees.getView()));
     }
 
     @FXML
@@ -103,7 +104,7 @@ public class Controller extends DbActions implements Initializable {
         if (!isLoginAlready)
             return;
 
-        Main.changeCenterView(Views.config.getTitle(),Views.config.getView());
+       Platform.runLater(() -> Main.changeCenterView(Views.config.getTitle(),Views.config.getView()));
     }
 
     @FXML
@@ -114,9 +115,11 @@ public class Controller extends DbActions implements Initializable {
         if (!isLoginAlready)
             return;
 
-        if (backUp()){
-            Main.showInfoDialog(homeStage,"Backup was successful.");
-        }
+      Platform.runLater(() -> {
+          if (backUp()){
+              Main.showInfoDialog(homeStage,"Backup was successful.");
+          }
+      });
 
     }
 
@@ -181,13 +184,13 @@ public class Controller extends DbActions implements Initializable {
 
     private void animateUp(){
         loginParent.setVisible(true);
-        //Duration = 2.5 seconds
-        Duration duration = Duration.millis(2500);
+        //Duration = 0.8 seconds
+        Duration duration = Duration.millis(800);
         //Create new translate transition
         TranslateTransition transition = new TranslateTransition(duration, loginParent);
-        //Move in X axis by 0
-        transition.setByX(0);
-        //Move in Y axis by -100
+        //Move in X axis by 80
+        transition.setByX(80);
+        //Move in Y axis by -57
         transition.setByY(-57);
         //Go back to previous position after 2.5 seconds
         //transition.setAutoReverse(true);
@@ -205,25 +208,23 @@ public class Controller extends DbActions implements Initializable {
 
     private void animateDown(){
         loginParent.setVisible(true);
-        //Duration = 2.5 seconds
-        Duration duration = Duration.millis(2500);
+        //Duration = 1 seconds
+        Duration duration = Duration.millis(1000);
         //Create new translate transition
         TranslateTransition transition = new TranslateTransition(duration, loginParent);
-        //Move in X axis by 0
-        transition.setByX(0);
-        //Move in Y axis by -100
+        //Move in X axis by -80
+        transition.setByX(-80);
+        //Move in Y axis by -57
         transition.setByY(57);
         //Go back to previous position after 2.5 seconds
         //transition.setAutoReverse(true);
         //Repeat animation twice
         //transition.setCycleCount(2);
-        transition.setOnFinished(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                loginParent.setVisible(false);
-                isLoginAlready = true;
-            }
+        transition.setOnFinished(event -> {
+            loginParent.setVisible(false);
+            isLoginAlready = true;
         });
+
         transition.play();
 
     }
@@ -250,4 +251,10 @@ public class Controller extends DbActions implements Initializable {
     }
 
 
+    @FXML
+    public void aboutUs(ActionEvent actionEvent) {
+        if(actionEvent == null)
+            return;
+        Platform.runLater(() -> Main.launchNewStage(Views.about.getView(),Views.about.getTitle(),false,true));
+    }
 }

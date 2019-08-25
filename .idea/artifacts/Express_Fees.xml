@@ -29,6 +29,9 @@
         </element>
         <element id="library" level="project" name="org.apache.poi:poi:4.1.0" />
         <element id="library" level="project" name="org.xerial:sqlite-jdbc:3.21.0.1" />
+        <element id="directory" name="files">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/files/manual.pdf" />
+        </element>
       </element>
     </root>
   </artifact>
